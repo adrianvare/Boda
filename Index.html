@@ -352,90 +352,80 @@
 
     </footer>
 
-    <script>
+<script>
 
-        const weddingDate =
-            new Date("June 15, 2026 16:00:00").getTime();
+// CONTADOR REGRESIVO
+const weddingDate =
+new Date("June 15, 2026 16:00:00").getTime();
 
-        setInterval(() => {
+setInterval(()=>{
 
-            let now = new Date().getTime();
+    let now = new Date().getTime();
 
-            let distance =
-                weddingDate - now;
+    let distance = weddingDate - now;
 
-            let days =
-                Math.floor(
-                    distance / (1000 * 60 * 60 * 24));
+    let days =
+    Math.floor(distance / (1000*60*60*24));
 
-            let hours =
-                Math.floor(
-                    (distance %
-                        (1000 * 60 * 60 * 24))
-                    /
-                    (1000 * 60 * 60));
+    let hours =
+    Math.floor((distance %
+    (1000*60*60*24))
+    /(1000*60*60));
 
-            let minutes =
-                Math.floor(
-                    (distance %
-                        (1000 * 60 * 60))
-                    /
-                    (1000 * 60));
+    let minutes =
+    Math.floor((distance %
+    (1000*60*60))
+    /(1000*60));
 
-            let seconds =
-                Math.floor(
-                    (distance %
-                        (1000 * 60))
-                    /
-                    1000);
+    let seconds =
+    Math.floor((distance %
+    (1000*60))
+    /1000);
 
-            document.getElementById("days").innerHTML = days;
-            document.getElementById("hours").innerHTML = hours;
-            document.getElementById("minutes").innerHTML = minutes;
-            document.getElementById("seconds").innerHTML = seconds;
+    document.getElementById("days").innerHTML=days;
+    document.getElementById("hours").innerHTML=hours;
+    document.getElementById("minutes").innerHTML=minutes;
+    document.getElementById("seconds").innerHTML=seconds;
 
-        }, 1000);
+},1000);
 
-    </script>
-    <script>
 
-const params = new URLSearchParams(window.location.search);
-const idInvitado = params.get('id');
+// CONFIRMAR ASISTENCIA
 
-async function cargarInvitado(){
-
-    const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbzhqE7t_uQG7ems3wyc_49yIqgxeWvG8koheT4WgEjTf-jYdeiZutt6TRutKj4w7gWcSA/exec?id="+idInvitado
-    );
-
-    const data = await response.json();
-
-    document.getElementById("nombre").value =
-        data.nombre;
-}
-
-cargarInvitado();
-
-document.getElementById('formInvitado')
-.addEventListener('submit', async function(e){
+document.getElementById("formInvitado")
+.addEventListener("submit", async function(e){
 
     e.preventDefault();
 
     const payload = {
 
-        id:idInvitado,
-        asistencia:document.getElementById('asistencia').value,
-        acompanantes:document.getElementById('acompanantes').value,
-        comentarios:document.getElementById('comentarios').value
+        id:new URLSearchParams(
+            window.location.search
+        ).get("id"),
+
+        asistencia:
+            document.getElementById("asistencia").value,
+
+        acompanantes:
+            document.getElementById("acompanantes").value,
+
+        comentarios:
+            document.getElementById("comentarios").value
 
     };
 
-    await fetch("https://script.google.com/macros/s/AKfycbzhqE7t_uQG7ems3wyc_49yIqgxeWvG8koheT4WgEjTf-jYdeiZutt6TRutKj4w7gWcSA/exec",{
-        method:"POST",
-        body:JSON.stringify(payload)
-    });
+    await fetch(
+        "https://script.google.com/macros/s/AKfycbzhqE7t_uQG7ems3wyc_49yIqgxeWvG8koheT4WgEjTf-jYdeiZutt6TRutKj4w7gWcSA/exec",
+        {
+            method:"POST",
+            body:JSON.stringify(payload)
+        }
+    );
 
-    document.getElementById("success").style.display="block";
+    alert(
+      "Gracias por confirmar tu asistencia"
+    );
+
 });
 
 </script>
