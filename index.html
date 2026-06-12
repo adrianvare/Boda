@@ -291,42 +291,42 @@
 
         }
 
-        .card{
+        .card {
 
-    background:white;
+            background: white;
 
-    padding:40px;
+            padding: 40px;
 
-    margin-top:50px;
+            margin-top: 50px;
 
-    border-radius:20px;
+            border-radius: 20px;
 
-    box-shadow:
-    0 5px 25px rgba(0,0,0,.08);
+            box-shadow:
+                0 5px 25px rgba(0, 0, 0, .08);
 
-}
+        }
 
-.card h2{
+        .card h2 {
 
-    text-align:center;
+            text-align: center;
 
-    color:#b89b72;
+            color: #b89b72;
 
-    font-family:'Cormorant Garamond',serif;
+            font-family: 'Cormorant Garamond', serif;
 
-    font-size:2.5rem;
+            font-size: 2.5rem;
 
-    margin-bottom:20px;
+            margin-bottom: 20px;
 
-}
+        }
 
-.text-center{
+        .text-center {
 
-    text-align:center;
+            text-align: center;
 
-    line-height:1.8;
+            line-height: 1.8;
 
-}
+        }
     </style>
 
 </head>
@@ -592,9 +592,54 @@
 
                 if (data.confirmado) {
 
-                    document.body.innerHTML =
-                        "<h2>Ya registramos tu respuesta. Gracias por confirmar.</h2>";
+                    document.body.innerHTML = `
 
+        <div style="
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+            text-align:center;
+            padding:20px;
+            background:#faf8f4;
+        ">
+
+            <h2 style="
+                color:#b89b72;
+                font-family:'Cormorant Garamond',serif;
+                font-size:3rem;
+                margin-bottom:20px;
+            ">
+                Ya registramos tu respuesta.
+            </h2>
+
+            <p style="
+                font-size:1.2rem;
+                margin-bottom:30px;
+                color:#555;
+            ">
+                Gracias por confirmar tu asistencia.
+            </p>
+
+            <a
+                href="https://adrianvare.github.io/Boda/indicaciones.html"
+                target="_blank"
+                style="
+                    background:#556b5d;
+                    color:white;
+                    text-decoration:none;
+                    padding:15px 30px;
+                    border-radius:30px;
+                    font-weight:bold;
+                    transition:0.3s;
+                ">
+                Ver indicaciones del evento
+            </a>
+
+        </div>
+
+    `;
                     return;
                 }
 
@@ -621,7 +666,7 @@
 
                         asistencia:
                             document.getElementById("asistencia").value,
-                        
+
                         comentarios:
                             document.getElementById("comentarios").value
 
