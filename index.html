@@ -207,86 +207,124 @@
             padding: 40px;
             color: #777;
         }
-        .dress-code{
 
-    margin-top:80px;
-    text-align:center;
+        .dress-code {
 
-}
+            margin-top: 80px;
+            text-align: center;
 
-.dress-code h2{
+        }
 
-    font-family:'Cormorant Garamond',serif;
-    font-size:3rem;
-    color:var(--gold);
-    margin-bottom:20px;
+        .dress-code h2 {
 
-}
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
 
-.dress-message{
+        }
 
-    max-width:700px;
-    margin:auto;
-    line-height:1.8;
-    margin-bottom:40px;
+        .dress-message {
 
-}
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+            margin-bottom: 40px;
 
-.dress-container{
+        }
 
-    display:flex;
-    justify-content:center;
-    gap:30px;
-    flex-wrap:wrap;
+        .dress-container {
 
-}
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
 
-.dress-card{
+        }
+
+        .dress-card {
+
+            background: white;
+            width: 280px;
+            padding: 35px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, .08);
+
+            transition: .3s;
+
+        }
+
+        .dress-card:hover {
+
+            transform: translateY(-5px);
+
+        }
+
+        .dress-icon {
+
+            font-size: 3rem;
+            margin-bottom: 15px;
+
+        }
+
+        .dress-card h3 {
+
+            color: var(--gold);
+            margin-bottom: 10px;
+
+        }
+
+        .dress-card p {
+
+            font-size: 1.1rem;
+
+        }
+
+        .dress-note {
+
+            margin-top: 35px;
+            font-style: italic;
+            color: #777;
+
+        }
+
+        .card{
 
     background:white;
-    width:280px;
-    padding:35px;
+
+    padding:40px;
+
+    margin-top:50px;
 
     border-radius:20px;
 
     box-shadow:
-    0 8px 25px rgba(0,0,0,.08);
-
-    transition:.3s;
+    0 5px 25px rgba(0,0,0,.08);
 
 }
 
-.dress-card:hover{
+.card h2{
 
-    transform:translateY(-5px);
+    text-align:center;
 
-}
+    color:#b89b72;
 
-.dress-icon{
+    font-family:'Cormorant Garamond',serif;
 
-    font-size:3rem;
-    margin-bottom:15px;
+    font-size:2.5rem;
 
-}
-
-.dress-card h3{
-
-    color:var(--gold);
-    margin-bottom:10px;
+    margin-bottom:20px;
 
 }
 
-.dress-card p{
+.text-center{
 
-    font-size:1.1rem;
+    text-align:center;
 
-}
-
-.dress-note{
-
-    margin-top:35px;
-    font-style:italic;
-    color:#777;
+    line-height:1.8;
 
 }
     </style>
@@ -381,41 +419,57 @@
         </div>
         <section class="dress-code">
 
-    <h2>Código de Vestimenta</h2>
+            <h2>Código de Vestimenta</h2>
 
-    <p class="dress-message">
-        Para acompañarnos en este día tan especial, agradecemos seguir el siguiente código de vestimenta.
-    </p>
+            <p class="dress-message">
+                Para acompañarnos en este día tan especial, agradecemos seguir el siguiente código de vestimenta.
+            </p>
 
-    <div class="dress-container">
+            <div class="dress-container">
 
-        <div class="dress-card">
+                <div class="dress-card">
 
-            <div class="dress-icon">👗</div>
+                    <div class="dress-icon">👗</div>
 
-            <h3>Mujeres</h3>
+                    <h3>Mujeres</h3>
 
-            <p>Vestido</p>
+                    <p>Formal</p>
+
+                </div>
+
+                <div class="dress-card">
+
+                    <div class="dress-icon">👔</div>
+
+                    <h3>Hombres</h3>
+
+                    <p>Camisa blanca tipo guayabera</p>
+
+                </div>
+
+            </div>
+
+            <p class="dress-note">
+                Agradecemos su colaboración para mantener la elegancia y armonía de nuestra celebración.
+            </p>
+
+        </section>
+
+        <div class="card">
+
+            <h2>Cena de Celebración</h2>
+
+            <p class="text-center">
+
+                Al finalizar la ceremonia, nos encantará compartir con ustedes una agradable cena para celebrar juntos
+                este momento tan especial en nuestras vidas.
+
+                Su compañía hará que esta ocasión sea aún más significativa y memorable para nosotros. Esperamos contar
+                con su presencia para disfrutar de una velada llena de alegría, gratitud y buenos momentos.
+
+            </p>
 
         </div>
-
-        <div class="dress-card">
-
-            <div class="dress-icon">👔</div>
-
-            <h3>Hombres</h3>
-
-            <p>Camisa blanca tipo guayabera</p>
-
-        </div>
-
-    </div>
-
-    <p class="dress-note">
-        Agradecemos su colaboración para mantener la elegancia y armonía de nuestra celebración.
-    </p>
-
-</section>
 
         <div class="form-card">
 
@@ -567,10 +621,7 @@
 
                         asistencia:
                             document.getElementById("asistencia").value,
-
-                        acompanantes:
-                            document.getElementById("acompanantes").value,
-
+                        
                         comentarios:
                             document.getElementById("comentarios").value
 
